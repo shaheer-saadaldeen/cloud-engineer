@@ -1,34 +1,26 @@
 name: First CI
 
 on:
-
   push:
 
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Get code
-
         uses: actions/checkout@v4
 
       - name: Install Python
-
         uses: actions/setup-python@v5
-
         with:
-
           python-version: "3.12"
 
       - name: Install pytest
-
         run: pip install pytest
-- name: Build Docker image
-        run: docker build -t cloud-engineer-app .
-      - name: Run tests
 
+      - name: Run tests
         run: pytest
+
+      - name: Build Docker image
+        run: docker build -t cloud-engineer-app .
