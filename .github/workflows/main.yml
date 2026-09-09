@@ -24,5 +24,6 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t cloud-engineer-app .
-- name: Check Docker
+
+      - name: Check Docker
         run: docker version
